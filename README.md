@@ -89,20 +89,20 @@
               jalr  x0,0(x1)	#return first call func(x)
    - If x is greater than 21, branch to label `xbg20`
 
-    #x>20 -> x>=21
-    xbg20:
-        addi  sp, sp, -8      
-        sw    x1, 0(sp)        
-        sw    a0, 4(sp)
-        slli  x22,a0,1	#x22=2*x
+        #x>20 -> x>=21
+        xbg20:
+            addi  sp, sp, -8      
+            sw    x1, 0(sp)        
+            sw    a0, 4(sp)
+            slli  x22,a0,1	#x22=2*x
 
-        div   a0, a0, x21	#x/5 
-        jal   x1, func	#call func(x/5)
-        sw    a0,4(sp) 
-        add   a0,a0,x22	#func(x/5)+2*x
-        lw    x1,0(sp)
-        addi  sp,sp,8
-        jalr  x0,0(x1)
+            div   a0, a0, x21	#x/5 
+            jal   x1, func	#call func(x/5)
+            sw    a0,4(sp) 
+            add   a0,a0,x22	#func(x/5)+2*x
+            lw    x1,0(sp)
+            addi  sp,sp,8
+            jalr  x0,0(x1)
 **7. Finish recursive function**
    - Back to the first call `func` address
    - Print String `Output`
