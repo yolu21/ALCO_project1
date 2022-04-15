@@ -5,7 +5,7 @@
 <img src="ques.png" width="400">
 
 ## Documentation
-
+- 
 
 ## Technique used
 - RISC-V -> assembly language
@@ -20,10 +20,10 @@
 - Download [alco_project1.asmc](https://github.com/yolu21/ALCO_project1/blob/main/alco_project1.asm)
 - Import alco_project1.asmc into rars.jar
 - Click the button like tool
-  - <img src="7.png" width="400"> 
-- If it assembled correct,the two green buttons will light up
+  - <img src="7.png" width="200"> 
+- If it assembled correct, two green buttons will light up
   - The first green button is all executed, the second green button is executed line by line
-  - <img src="8.png" width="400">
+  - <img src="8.png" width="200">
 
 ## Sample Output Screenshot
 - x>20
