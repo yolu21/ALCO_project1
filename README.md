@@ -69,9 +69,9 @@
    - If x is greater than 1 and less than 11,  branch to label `xle10`
    - If x is greater than 10 and less than 21 (is the same but change argument of function call),  branch to label `xle20`
 
-            #1<x<=10 -> 1<x<11
-            #10<x<=20 -> 10<x<=21 
-            xle10:
+          #1<x<=10 -> 1<x<11
+          #10<x<=20 -> 10<x<=21 
+          xle10:
               addi  sp, sp, -8	#allocate space for saved register
               sw    x1, 0(sp)	#store x1(return address)   
               sw    a0, 4(sp)	#store origin x   
@@ -89,35 +89,35 @@
               jalr  x0,0(x1)	#return first call func(x)
    - If x is greater than 21, branch to label `xbg20`
 
-        #x>20 -> x>=21
-        xbg20:
-            addi  sp, sp, -8      
-            sw    x1, 0(sp)        
-            sw    a0, 4(sp)
-            slli  x22,a0,1	#x22=2*x
+          #x>20 -> x>=21
+          xbg20:
+              addi  sp, sp, -8      
+              sw    x1, 0(sp)        
+              sw    a0, 4(sp)
+              slli  x22,a0,1	#x22=2*x
 
-            div   a0, a0, x21	#x/5 
-            jal   x1, func	#call func(x/5)
-            sw    a0,4(sp) 
-            add   a0,a0,x22	#func(x/5)+2*x
-            lw    x1,0(sp)
-            addi  sp,sp,8
-            jalr  x0,0(x1)
+              div   a0, a0, x21	#x/5 
+              jal   x1, func	#call func(x/5)
+              sw    a0,4(sp) 
+              add   a0,a0,x22	#func(x/5)+2*x
+              lw    x1,0(sp)
+              addi  sp,sp,8
+              jalr  x0,0(x1)
 **7. Finish recursive function**
    - Back to the first call `func` address
    - Print String `Output`
    - Print result
    - exit
   
-    #in main
-    la a0,Output	
-    li a7,4		#4 PrintStirng
-    ecall
-    mv a0,x22       #move x22(result) into a0
-    li a7,1		#1 printint
-    ecall
-    li a7,10        #10 exit
-    ecall
+          #in main
+          la a0,Output	
+          li a7,4		#4 PrintStirng
+          ecall
+          mv a0,x22       #move x22(result) into a0
+          li a7,1		#1 printint
+          ecall
+          li a7,10        #10 exit
+          ecall
 
 ## Technique used
 - RISC-V -> assembly language
