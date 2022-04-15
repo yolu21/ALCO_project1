@@ -5,7 +5,7 @@
 <img src="ques.png" width="400">
 
 ## Documentation
-  ### Write a recursive function called `func` to fix above question.
+  ### Write a recursive function called `func` to fix above function.
    #### Detail functions as following:
 **1. Define some strings `Input` and `Output` in order to be easier to use later**
 
